@@ -14,6 +14,12 @@ namespace Verificador
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
+                name: "validar",
+                url: "home/validar/{cartao}",
+                defaults: new { controller = "Home", action = "Validar", cartao = UrlParameter.Optional }
+            );
+
+            routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }

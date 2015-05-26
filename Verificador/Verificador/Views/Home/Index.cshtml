@@ -1,0 +1,26 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<form action="" class="form-horizontal" method="post" role="form" >
+    @Html.AntiForgeryToken()
+    <h4>Digite o número do cartão para validar.</h4>
+    <hr />
+    <div class="form-group">
+        <label class="col-md-2 control-label" for="Cartao">Número do cartão</label>
+        <div class="col-md-10">
+            <input class="form-control" id="txtCartao" name="Cartao" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input id="btnEnviar" type="submit" class="btn btn-default"  />
+        </div>
+    </div>
+</form>
+<div id="resultado"></div>
+<hr />
+<input type="hidden" id="urlValidar" value="@Url.RouteUrl("validar")" />
+@section Scripts{
+    @Scripts.Render("~/validar")
+}
